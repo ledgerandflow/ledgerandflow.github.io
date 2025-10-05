@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--
+  File: index.html
+  Project: Ledger & Flow | Coming Soon
+  Created: 10.05.2025
+  Updated: 10.05.2025
+  Author: Ledger & Flow
+-->
 
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Maundy Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+
+  <title>Ledger & Flow — Bookkeeping, Payroll, and Clean Financials | Coming Soon</title>
+  <meta name="description" content="Ledger & Flow helps small businesses get clean books, simple payroll, and confident cash flow. Monthly bookkeeping, cleanups, and practical reporting. Based in Harlingen, TX.">
+  <meta name="keywords" content="Ledger & Flow, bookkeeping, bookkeeper, QuickBooks Certified, QuickBooks Advanced Online, QuickBooks Payroll, Xero Certified, payroll, cleanup, catch-up bookkeeping, monthly close, management reports, cash flow, fractional CFO, Harlingen, Rio Grande Valley, RGV, Texas small business">
+
+  <!-- Robots + Canonical -->
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://ledgerandflow.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ledger & Flow — Bookkeeping, Payroll, and Clean Financials">
+  <meta property="og:description" content="Clean books. Simple payroll. Confident decisions. QuickBooks Advanced, Payroll & Xero certified.">
+  <meta property="og:url" content="https://ledgerandflow.com/">
+  <meta property="og:image" content="assets/img/og-ledgerandflow.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ledger & Flow — Bookkeeping, Payroll, and Clean Financials">
+  <meta name="twitter:description" content="Monthly bookkeeping, cleanups, payroll, and practical reporting.">
+  <meta name="twitter:image" content="assets/img/og-ledgerandflow.jpg">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -15,7 +40,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,13 +50,39 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Maundy
-  * Template URL: https://bootstrapmade.com/maundy-free-coming-soon-bootstrap-theme/
-  * Updated: Feb 01 2025 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AccountingService",
+    "name": "Ledger & Flow",
+    "url": "https://ledgerandflow.com/",
+    "logo": "https://ledgerandflow.com/assets/img/og-ledgerandflow.jpg",
+    "areaServed": "Rio Grande Valley, Texas",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Harlingen",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://linktr.ee/ledgerandflow",
+      "https://www.instagram.com/ledgerandflow",
+      "https://www.facebook.com/ledgerandflow",
+      "https://www.linkedin.com/company/ledgerandflow/",
+      "https://www.youtube.com/@ledgerandflow"
+    ]
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5GV06PDGQV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5GV06PDGQV');
+  </script>
 </head>
 
 <body class="index-page">
@@ -40,16 +91,14 @@
     <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Maundy</h1>
+        <!-- <img src="assets/img/logo-ledgerandflow.png" alt="Ledger & Flow"> -->
+        <h1 class="sitename">Ledger & Flow</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about">What We Do</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -61,71 +110,78 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero section transparent-background">
-
       <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
         <div class="row justify-content-center">
           <div class="col-lg-8">
-            <h2>Maundy<br></h2>
-            <p>We are still working on our website. Stay tuned for updates!</p>
+            <h2>Our <span class="text-accent">New Site</span> is Coming Soon</h2>
+            <p>Clean books and clear cash flow for small business owners.<br>
+              <br>
+              <emp>QuickBooks Advanced, Payroll & Xero certified</emp></p>
           </div>
-          <div class="countdown d-flex justify-content-center" data-count="2025/12/3">
+
+          <!-- Countdown -->
+          <!-- Launching Oct 19, 2025 @ 11:59 PM -->
+          <div class="countdown d-flex justify-content-center" data-count="2025-10-19 23:59:00">
             <div>
-              <h3 class="count-days">482</h3>
+              <h3 class="count-days">--</h3>
               <h4>Days</h4>
             </div>
             <div>
-              <h3 class="count-hours">6</h3>
+              <h3 class="count-hours">--</h3>
               <h4>Hours</h4>
             </div>
             <div>
-              <h3 class="count-minutes">49</h3>
+              <h3 class="count-minutes">--</h3>
               <h4>Minutes</h4>
             </div>
             <div>
-              <h3 class="count-seconds">21</h3>
+              <h3 class="count-seconds">--</h3>
               <h4>Seconds</h4>
             </div>
           </div>
 
+          <!-- CTAs -->
           <div class="col-lg-5 hero-newsletter">
-            <p>Subscribe now to get the latest updates!</p>
-            <form action="forms/newsletter.php" method="post" class="php-email-form">
-              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-            </form>
+            <p>Start with a quick, casual Financial Health Check</p>
+            <div class="d-grid gap-2">
+              <a class="btn btn-primary" target="_blank" rel="noopener"
+                 href="https://calendly.com/ledgerandflow/financial-health-check">
+                Book a 30-minute Call
+              </a>
+              <a class="btn btn-outline-secondary" target="_blank" rel="noopener"
+                 href="https://linktr.ee/ledgerandflow">
+                Get to know us better
+              </a>
+            </div>
           </div>
 
+          <!-- Socials -->
           <div class="social-links">
-            <a href="#"><i class="bi bi-twitter-x"></i></a>
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.facebook.com/ledgerandflow" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/ledgerandflow" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/ledgerandflow/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.youtube.com/@ledgerandflow" target="_blank" rel="noopener" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
           </div>
 
         </div>
       </div>
-
-    </section><!-- /Hero Section -->
+    </section>
+    <!-- /Hero Section -->
 
     <!-- About Section -->
     <section id="about" class="about section transparent-background">
-
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
+        <h2>What We Do</h2>
+        <p class="lead-subtitle">Bookkeeping, payroll, and practical reports that help you run the business with confidence.</p>
+      </div>
 
       <div class="container">
-
         <div class="row gy-5">
 
           <div class="content col-xl-5 d-flex flex-column" data-aos="fade-up" data-aos-delay="100">
-            <h3>Voluptatem dignissimos provident quasi</h3>
+            <h3><span class="text-accent">Simple</span> financial operations</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+              We set up clean systems in your accounting platform, keep your numbers current, and give you clear reports for better decisions.
             </p>
           </div>
 
@@ -133,140 +189,59 @@
             <div class="row gy-4">
 
               <div class="col-md-6 icon-box position-relative">
-                <i class="bi bi-briefcase"></i>
-                <h4><a href="" class="stretched-link">Corporis voluptates sit</a></h4>
-                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-              </div><!-- Icon-Box -->
+                <i class="bi bi-journal-check"></i>
+                <h4>Monthly Bookkeeping</h4>
+                <p>Reconciliations, categorizations, and close. Clean books that pass the sniff test.</p>
+              </div>
 
               <div class="col-md-6 icon-box position-relative">
-                <i class="bi bi-gem"></i>
-                <h4><a href="" class="stretched-link">Ullamco laboris nisi</a></h4>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-              </div><!-- Icon-Box -->
+                <i class="bi bi-people"></i>
+                <h4>Payroll</h4>
+                <p>Simple, compliant payroll with the right setup and ongoing support.</p>
+              </div>
 
               <div class="col-md-6 icon-box position-relative">
-                <i class="bi bi-broadcast"></i>
-                <h4><a href="" class="stretched-link">Labore consequatur</a></h4>
-                <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-              </div><!-- Icon-Box -->
+                <i class="bi bi-arrow-repeat"></i>
+                <h4>Cleanup &amp; Catch-up</h4>
+                <p>Fix past periods and get current fast so you can move forward.</p>
+              </div>
 
               <div class="col-md-6 icon-box position-relative">
-                <i class="bi bi-easel"></i>
-                <h4><a href="" class="stretched-link">Beatae veritatis</a></h4>
-                <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
-              </div><!-- Icon-Box -->
+                <i class="bi bi-bar-chart-line"></i>
+                <h4>Reporting &amp; Cash Flow</h4>
+                <p>Monthly reports you will actually read and cash flow you can act on.</p>
+              </div>
 
             </div>
           </div>
 
         </div>
-
       </div>
+    </section>
+    <!-- /About Section -->
 
-    </section><!-- /About Section -->
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section transparent-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h3>Address</h3>
-                <p>A108 Adam Street, New York, NY 535022</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3>Call Us</h3>
-                <p>+1 5589 55488 55</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Email Us</h3>
-                <p>info@example.com</p>
-              </div>
-            </div><!-- End Info Item -->
-
-          </div>
-
-          <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Contact Section -->
+    <!-- Contact Section intentionally omitted to avoid duplication with footer and CTAs -->
 
   </main>
 
   <footer id="footer" class="footer transparent-background">
-
     <div class="container">
       <div class="row gy-3">
         <div class="col-lg-3 col-md-6 d-flex">
           <i class="bi bi-geo-alt icon"></i>
           <div class="address">
-            <h4>Address</h4>
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p></p>
+            <h4>Location</h4>
+            <p>Harlingen, TX</p>
           </div>
-
         </div>
 
         <div class="col-lg-3 col-md-6 d-flex">
-          <i class="bi bi-telephone icon"></i>
+          <i class="bi bi-link-45deg icon"></i>
           <div>
-            <h4>Contact</h4>
+            <h4>Get in Touch</h4>
             <p>
-              <strong>Phone:</strong> <span>+1 5589 55488 55</span><br>
-              <strong>Email:</strong> <span>info@example.com</span><br>
+              <strong>Email:</strong> <span><a href="mailto:hello@ledgerandflow.com	">hello@ledgerandflow.com</a></span><br>
+              <strong>Links:</strong> <span><a href="https://linktr.ee/ledgerandflow" target="_blank" rel="noopener">linktr.ee/ledgerandflow</a></span><br>
             </p>
           </div>
         </div>
@@ -274,10 +249,10 @@
         <div class="col-lg-3 col-md-6 d-flex">
           <i class="bi bi-clock icon"></i>
           <div>
-            <h4>Opening Hours</h4>
+            <h4>Status</h4>
             <p>
-              <strong>Mon-Sat:</strong> <span>11AM - 23PM</span><br>
-              <strong>Sunday</strong>: <span>Closed</span>
+              <strong>Site:</strong> <span>Coming Soon</span><br>
+              <strong>Launch Target:</strong> <span>Nov 15, 2025</span>
             </p>
           </div>
         </div>
@@ -285,20 +260,20 @@
         <div class="col-lg-3 col-md-6">
           <h4>Follow Us</h4>
           <div class="social-links d-flex">
-            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.facebook.com/ledgerandflow" class="facebook" target="_blank" rel="noopener"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/ledgerandflow" class="instagram" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/ledgerandflow/" class="linkedin" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.youtube.com/@ledgerandflow" class="youtube" target="_blank" rel="noopener"><i class="bi bi-youtube"></i></a>
+            <a href="https://linktr.ee/ledgerandflow" class="link" target="_blank" rel="noopener"><i class="bi bi-link-45deg"></i></a>
           </div>
         </div>
-
       </div>
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Maundy</strong> <span>All Rights Reserved</span></p>
+      <p>© <span>2025</span> <strong class="px-1 sitename">Ledger &amp; Flow</strong> <span>All Rights Reserved</span><br>
+      Powered by <a href="https://farodigitalstudio.com" target="_blank" rel="noopener">Faro Digital Studio</a></p>
     </div>
-
   </footer>
 
   <!-- Scroll Top -->
@@ -309,12 +284,9 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
 </body>
-
 </html>
