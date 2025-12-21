@@ -3,68 +3,146 @@
 # About Section
 --------------------------------------------------------------*/
 .about {
-  .content {
-    h3 {
-      font-weight: 700;
-      font-size: 34px;
-      margin-bottom: 30px;
+  padding: 80px 0;
+  background-color: var(--background-color);
+
+  .about-image {
+    position: relative;
+    margin-bottom: 30px;
+
+    .main-image {
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
-    p {
-      margin-bottom: 30px;
-    }
-
-    .about-btn {
-      padding: 8px 30px 9px 30px;
-      color: var(--accent-color);
-      border-radius: 50px;
-      transition: 0.3s;
-      text-transform: uppercase;
-      font-weight: 600;
-      font-size: 13px;
-      display: inline-flex;
+    .experience-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      border: 2px solid var(--accent-color);
+      justify-content: center;
+      min-width: 120px;
+      min-height: 120px;
 
-      i {
-        font-size: 16px;
-        padding-left: 5px;
+      @media (max-width: 768px) {
+        min-width: 100px;
+        min-height: 100px;
+        padding: 15px;
+        right: 0;
       }
 
-      &:hover {
-        background: var(--accent-color);
-        color: var(--contrast-color);
+      .years {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1;
+
+        @media (max-width: 768px) {
+          font-size: 2rem;
+        }
+      }
+
+      .text {
+        font-size: 0.9rem;
+        text-align: center;
+        line-height: 1.2;
       }
     }
   }
 
-  .icon-box {
-    i {
-      font-size: 40px;
-      color: var(--accent-color);
-      margin-bottom: 10px;
+  .about-content {
+    padding-left: 20px;
+
+    @media (max-width: 992px) {
+      padding-left: 0;
+      margin-top: 30px;
     }
 
-    h4 {
-      font-size: 20px;
+    h2 {
+      font-size: 2.5rem;
       font-weight: 700;
-      margin: 0 0 10px 0;
+      margin-bottom: 1.5rem;
+      color: var(--heading-color);
 
-      a {
-        color: var(--heading-color);
-        transition: 0.3s;
+      @media (max-width: 768px) {
+        font-size: 2rem;
       }
     }
 
-    p {
-      font-size: 15px;
-      color: color-mix(in srgb, var(--default-color), transparent 40%);
-      margin-bottom: 0;
+    .lead {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      color: var(--default-color);
     }
 
-    &:hover {
-      h4 a {
+    p {
+      margin-bottom: 1.5rem;
+      color: var(--default-color);
+    }
+
+    .features-row {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .feature-item {
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+
+      .icon {
+        margin-bottom: 1rem;
+        font-size: 2.5rem;
         color: var(--accent-color);
+
+        i {
+          display: inline-block;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover i {
+          transform: translateY(-5px);
+        }
+      }
+
+      h4 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--heading-color);
+      }
+
+      p {
+        font-size: 0.95rem;
+        margin-bottom: 0;
+      }
+    }
+
+    .cta-button {
+      margin-top: 1rem;
+
+      .btn-primary {
+        background-color: var(--accent-color);
+        border-color: var(--accent-color);
+        color: var(--contrast-color);
+        padding: 12px 30px;
+        font-weight: 600;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: color-mix(in srgb, var(--accent-color), #000 10%);
+          border-color: color-mix(in srgb, var(--accent-color), #000 10%);
+          transform: translateY(-3px);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
       }
     }
   }

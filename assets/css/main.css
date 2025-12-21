@@ -1,9 +1,14 @@
 /*--------------------------------------------------------------
   File: main.css
-  Project: Ledger & Flow | Coming Soon
-  Created: 10.05.2025
-  Updated: 10.05.2025
+  Project: Ledger & Flow
+  Created: 12.10.2025
+  Updated: 12.21.2025
   Author: Faro Digital Studio
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
@@ -15,41 +20,37 @@
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #ffffff; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #ffffff; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #24b7a4; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --default-color: #444d4d; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #003a36; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #018880; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #ffffff;  /* The default color of the main navmenu links */
-  --nav-hover-color: #24b7a4; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #384a59; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #566c7f; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #ffffff; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #24b7a4; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: rgba(255, 255, 255, 0.7);  /* The default color of the main navmenu links */
+  --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #444d4d; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #018880; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #f9f9f9;
+  --background-color: #f1f8f7;
   --surface-color: #ffffff;
 }
 
 .dark-background {
-  --background-color: #060606;
+  --background-color: #005751;
   --default-color: #ffffff;
   --heading-color: #ffffff;
+  --accent-color: #ffffff;
   --surface-color: #252525;
-  --contrast-color: #ffffff;
-}
-
-.transparent-background {
-  --background-color: rgba(255, 255, 255, 0);
-  --contrast-color: #5b5b5b;
+  --contrast-color: #018880;
 }
 
 /* Smooth scroll */
@@ -64,25 +65,6 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
-  background: url(../img/bg.jpg) top center no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-body::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: rgba(49, 71, 89, 0.6);
-}
-
-@media (min-width: 1366px) {
-  body {
-    background-attachment: fixed;
-  }
 }
 
 a {
@@ -162,7 +144,9 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(255, 255, 255, 0);
+  --background-color: rgba(0, 0, 0, 0);
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 15px 0;
@@ -175,7 +159,7 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 32px;
+  max-height: 36px;
   margin-right: 8px;
 }
 
@@ -186,10 +170,53 @@ h6 {
   color: var(--heading-color);
 }
 
+.header .btn-getstarted,
+.header .btn-getstarted:focus {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-size: 14px;
+  padding: 8px 26px;
+  margin: 0;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.header .btn-getstarted:hover,
+.header .btn-getstarted:focus:hover {
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
+
+@media (max-width: 1200px) {
+  .header .logo {
+    order: 1;
+  }
+
+  .header .btn-getstarted {
+    order: 2;
+    margin: 0 15px 0 0;
+    padding: 6px 20px;
+  }
+
+  .header .navmenu {
+    order: 3;
+  }
+}
+
+.scrolled .header {
+  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Global Header on Scroll
+------------------------------*/
+.scrolled .header {
+  --background-color: rgba(0, 87, 81, 0.9);
+}
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
-/* Navmenu - Desktop */
+/* Desktop Navigation */
 @media (min-width: 1200px) {
   .navmenu {
     padding: 0;
@@ -207,11 +234,20 @@ h6 {
     position: relative;
   }
 
+  .navmenu>ul>li {
+    white-space: nowrap;
+    padding: 15px 14px;
+  }
+
+  .navmenu>ul>li:last-child {
+    padding-right: 0;
+  }
+
   .navmenu a,
   .navmenu a:focus {
     color: var(--nav-color);
-    padding: 18px 15px;
-    font-size: 16px;
+    font-size: 15px;
+    padding: 0 2px;
     font-family: var(--nav-font);
     font-weight: 400;
     display: flex;
@@ -219,6 +255,7 @@ h6 {
     justify-content: space-between;
     white-space: nowrap;
     transition: 0.3s;
+    position: relative;
   }
 
   .navmenu a i,
@@ -229,8 +266,24 @@ h6 {
     transition: 0.3s;
   }
 
-  .navmenu li:last-child a {
-    padding-right: 0;
+  .navmenu>ul>li>a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: var(--accent-color);
+    visibility: hidden;
+    width: 0px;
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  .navmenu a:hover:before,
+  .navmenu li:hover>a:before,
+  .navmenu .active:before {
+    visibility: visible;
+    width: 100%;
   }
 
   .navmenu li:hover>a,
@@ -296,7 +349,7 @@ h6 {
   }
 }
 
-/* Navmenu - Mobile */
+/* Mobile Navigation */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
     color: var(--nav-color);
@@ -321,10 +374,11 @@ h6 {
     margin: 0;
     border-radius: 6px;
     background-color: var(--nav-mobile-background-color);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    box-shadow: none;
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
   }
 
   .navmenu a,
@@ -382,8 +436,6 @@ h6 {
     padding: 10px 0;
     margin: 10px 20px;
     background-color: var(--nav-dropdown-background-color);
-    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-    box-shadow: none;
     transition: all 0.5s ease-in-out;
   }
 
@@ -427,7 +479,6 @@ h6 {
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
-  --background-color: rgba(255, 255, 255, 0);
   color: var(--default-color);
   background-color: var(--background-color);
   font-size: 14px;
@@ -491,9 +542,9 @@ h6 {
 #preloader {
   position: fixed;
   inset: 0;
-  z-index: 999999;
+  z-index: 9999;
   overflow: hidden;
-  background: var(--background-color);
+  background-color: var(--background-color);
   transition: all 0.6s ease-out;
 }
 
@@ -502,12 +553,12 @@ h6 {
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 6px solid #ffffff;
-  border-color: var(--accent-color) transparent var(--accent-color) transparent;
+  border: 6px solid var(--accent-color);
+  border-top-color: color-mix(in srgb, var(--accent-color), transparent 90%);
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  animation: animate-preloader 1.5s linear infinite;
+  animation: animate-preloader 1s linear infinite;
 }
 
 @keyframes animate-preloader {
@@ -528,12 +579,12 @@ h6 {
   visibility: hidden;
   opacity: 0;
   right: 15px;
-  bottom: -15px;
+  bottom: 15px;
   z-index: 99999;
   background-color: var(--accent-color);
-  width: 44px;
-  height: 44px;
-  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
   transition: all 0.4s;
 }
 
@@ -551,7 +602,6 @@ h6 {
 .scroll-top.active {
   visibility: visible;
   opacity: 1;
-  bottom: 15px;
 }
 
 /*--------------------------------------------------------------
@@ -573,7 +623,7 @@ h6 {
 }
 
 .page-title .heading {
-  padding: 80px 0;
+  padding: 120px 0 80px 0;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
@@ -615,16 +665,15 @@ section,
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 60px 0;
-  scroll-margin-top: 90px;
+  scroll-margin-top: 82px;
   overflow: clip;
-  position: relative;
 }
 
 @media (max-width: 1199px) {
 
   section,
   .section {
-    scroll-margin-top: 66px;
+    scroll-margin-top: 73px;
   }
 }
 
@@ -638,630 +687,2024 @@ section,
 }
 
 .section-title h2 {
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  padding: 8px 20px;
+  margin: 0;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 50px;
+  font-family: var(--default-font);
+}
+
+.section-title div {
+  color: var(--heading-color);
+  margin: 10px 0 0 0;
   font-size: 32px;
   font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  position: relative;
+  font-family: var(--heading-font);
 }
 
-.section-title h2:after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 50px;
-  height: 3px;
-  background: var(--accent-color);
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-
-.section-title p {
-  margin-bottom: 0;
+.section-title div .description-title {
+  color: var(--accent-color);
 }
 
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
-  --background-color: rgba(255, 255, 255, 0);
-  width: 100%;
-  min-height: 100vh;
+  padding-top: 150px;
   position: relative;
-  padding: 80px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: var(--background-color);
+  overflow: hidden;
+  padding-bottom: 120px;
 }
 
-.hero h2 {
-  margin: 0;
-  font-size: 48px;
+.hero .hero-content h2 {
+  font-size: 3.5rem;
   font-weight: 700;
-}
-
-.hero p {
-  margin: 10px 0 0 0;
-  font-size: 24px;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
   color: var(--heading-color);
 }
 
+@media (max-width: 992px) {
+  .hero .hero-content h2 {
+    font-size: 2.5rem;
+  }
+}
+
 @media (max-width: 768px) {
-  .hero h2 {
-    font-size: 32px;
-  }
-
-  .hero p {
-    font-size: 18px;
+  .hero .hero-content h2 {
+    font-size: 2rem;
   }
 }
 
-.hero .countdown {
-  margin-top: 25px;
+.hero .hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: var(--default-color);
 }
 
-.hero .countdown div {
-  text-align: center;
-  border: 2px solid color-mix(in srgb, var(--default-color), white 90%);
-  border-radius: 8px;
-  margin: 10px 10px;
-  width: 100px;
-  padding: 15px 0;
-}
-
-.hero .countdown div h3 {
-  font-weight: 700;
-  font-size: 32px;
-  margin-bottom: 15px;
-}
-
-.hero .countdown div h4 {
-  font-size: 16px;
-  font-weight: 600;
-}
-
-@media (max-width: 575px) {
-  .hero .countdown div {
-    width: 70px;
-    padding: 10px 0;
-    margin: 10px 8px;
-  }
-
-  .hero .countdown div h3 {
-    font-size: 28px;
-    margin-bottom: 10px;
-  }
-
-  .hero .countdown div h4 {
-    font-size: 14px;
-    font-weight: 500;
-  }
-}
-
-.hero .hero-newsletter {
-  margin-top: 25px;
-}
-
-.hero .hero-newsletter p {
-  font-size: 18px;
-  margin: 0 0 15px 0;
-}
-
-.hero .hero-newsletter .newsletter-form {
-  margin-bottom: 15px;
-  padding: 6px 8px;
-  position: relative;
-  background-color: var(--surface-color);
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  box-shadow: 0px 0 20px rgba(0, 0, 0, 0.1);
+.hero .hero-content .hero-btns {
   display: flex;
-  transition: 0.3s;
-  border-radius: 50px;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
 }
 
-.hero .hero-newsletter .newsletter-form:focus-within {
+@media (max-width: 576px) {
+  .hero .hero-content .hero-btns {
+    flex-direction: column;
+  }
+}
+
+.hero .hero-content .hero-btns .btn {
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.hero .hero-content .hero-btns .btn-primary {
+  background-color: var(--accent-color);
   border-color: var(--accent-color);
-}
-
-.hero .hero-newsletter .newsletter-form input[type=email] {
-  border: 0;
-  padding: 4px;
-  width: 100%;
-  background-color: var(--surface-color);
   color: var(--contrast-color);
 }
 
-.hero .hero-newsletter .newsletter-form input[type=email]:focus-visible {
-  outline: none;
+.hero .hero-content .hero-btns .btn-primary:hover {
+  background-color: color-mix(in srgb, var(--accent-color), #000 10%);
+  border-color: color-mix(in srgb, var(--accent-color), #000 10%);
 }
 
-.hero .hero-newsletter .newsletter-form input[type=submit] {
-  border: 0;
-  font-size: 16px;
-  padding: 0 20px;
-  margin: -7px -9px -7px 0;
-  background: var(--accent-color);
-  color: var(--default-color);
-  transition: 0.3s;
-  border-radius: 50px;
-}
-
-.hero .hero-newsletter .newsletter-form input[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
-
-.hero .social-links {
-  margin-top: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero .social-links a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
-  font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  margin-right: 10px;
-  transition: 0.3s;
-}
-
-.hero .social-links a:hover {
+.hero .hero-content .hero-btns .btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
   color: var(--accent-color);
-  border-color: var(--accent-color);
+}
+
+.hero .hero-content .hero-btns .btn-outline:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.hero .hero-content .hero-stats {
+  display: flex;
+  gap: 2.5rem;
+}
+
+@media (max-width: 576px) {
+  .hero .hero-content .hero-stats {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+}
+
+.hero .hero-content .hero-stats .stat-item h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.hero .hero-content .hero-stats .stat-item p {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  color: var(--default-color);
+}
+
+.hero .hero-image {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hero .hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+}
+
+.hero .hero-image img:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 992px) {
+  .hero {
+    padding: 120px 0 80px 0;
+  }
+
+  .hero .hero-content {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .hero .hero-content .hero-btns {
+    justify-content: center;
+  }
+
+  .hero .hero-content .hero-stats {
+    justify-content: center;
+  }
 }
 
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
-.about .content h3 {
-  font-weight: 700;
-  font-size: 34px;
+.about {
+  padding: 80px 0;
+  background-color: var(--background-color);
+}
+
+.about .about-image {
+  position: relative;
   margin-bottom: 30px;
 }
 
-.about .content p {
-  margin-bottom: 30px;
+.about .about-image .main-image {
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.about .content .about-btn {
-  padding: 8px 30px 9px 30px;
-  color: var(--accent-color);
-  border-radius: 50px;
-  transition: 0.3s;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 13px;
-  display: inline-flex;
+.about .about-image .experience-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  border: 2px solid var(--accent-color);
+  justify-content: center;
+  min-width: 120px;
+  min-height: 120px;
 }
 
-.about .content .about-btn i {
-  font-size: 16px;
-  padding-left: 5px;
+@media (max-width: 768px) {
+  .about .about-image .experience-badge {
+    min-width: 100px;
+    min-height: 100px;
+    padding: 15px;
+    right: 0;
+  }
 }
 
-.about .content .about-btn:hover {
-  background: var(--accent-color);
+.about .about-image .experience-badge .years {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .about .about-image .experience-badge .years {
+    font-size: 2rem;
+  }
+}
+
+.about .about-image .experience-badge .text {
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.about .about-content {
+  padding-left: 20px;
+}
+
+@media (max-width: 992px) {
+  .about .about-content {
+    padding-left: 0;
+    margin-top: 30px;
+  }
+}
+
+.about .about-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--heading-color);
+}
+
+@media (max-width: 768px) {
+  .about .about-content h2 {
+    font-size: 2rem;
+  }
+}
+
+.about .about-content .lead {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: var(--default-color);
+}
+
+.about .about-content p {
+  margin-bottom: 1.5rem;
+  color: var(--default-color);
+}
+
+.about .about-content .features-row {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.about .about-content .feature-item {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.about .about-content .feature-item .icon {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: var(--accent-color);
+}
+
+.about .about-content .feature-item .icon i {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.about .about-content .feature-item .icon:hover i {
+  transform: translateY(-5px);
+}
+
+.about .about-content .feature-item h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--heading-color);
+}
+
+.about .about-content .feature-item p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.about .about-content .cta-button {
+  margin-top: 1rem;
+}
+
+.about .about-content .cta-button .btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.about .about-content .cta-button .btn-primary:hover {
+  background-color: color-mix(in srgb, var(--accent-color), #000 10%);
+  border-color: color-mix(in srgb, var(--accent-color), #000 10%);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/*--------------------------------------------------------------
+# Work Process Section
+--------------------------------------------------------------*/
+.work-process .steps-content {
+  padding-right: 30px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 992px) {
+  .work-process .steps-content {
+    padding-right: 0;
+  }
+}
+
+.work-process .steps-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--heading-color);
+}
+
+@media (max-width: 768px) {
+  .work-process .steps-content h2 {
+    font-size: 2rem;
+  }
+}
+
+.work-process .steps-content .lead {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: var(--default-color);
+}
+
+.work-process .steps-content p {
+  margin-bottom: 2rem;
+  color: var(--default-color);
+}
+
+.work-process .steps-content .steps-cta {
+  display: flex;
+  gap: 15px;
+}
+
+@media (max-width: 576px) {
+  .work-process .steps-content .steps-cta {
+    flex-direction: column;
+  }
+}
+
+.work-process .steps-content .steps-cta .btn {
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.work-process .steps-content .steps-cta .btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
   color: var(--contrast-color);
 }
 
-.about .icon-box i {
-  font-size: 40px;
+.work-process .steps-content .steps-cta .btn-primary:hover {
+  background-color: color-mix(in srgb, var(--accent-color), #000 10%);
+  border-color: color-mix(in srgb, var(--accent-color), #000 10%);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.work-process .steps-content .steps-cta .btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+.work-process .steps-content .steps-cta .btn-outline:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.work-process .steps-list {
+  position: relative;
+}
+
+.work-process .steps-list::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 25px;
+  width: 2px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+@media (max-width: 576px) {
+  .work-process .steps-list::before {
+    left: 20px;
+  }
+}
+
+.work-process .steps-list .step-item {
+  display: flex;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.work-process .steps-list .step-item:last-child {
+  margin-bottom: 0;
+}
+
+.work-process .steps-list .step-item:hover .step-number {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: scale(1.1);
+}
+
+.work-process .steps-list .step-item .step-number {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: color-mix(in srgb, var(--accent-color) 10%, white 90%);
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-right: 20px;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 576px) {
+  .work-process .steps-list .step-item .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
+.work-process .steps-list .step-item .step-content {
+  padding-top: 5px;
+}
+
+.work-process .steps-list .step-item .step-content h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--heading-color);
+}
+
+@media (max-width: 576px) {
+  .work-process .steps-list .step-item .step-content h3 {
+    font-size: 1.1rem;
+  }
+}
+
+.work-process .steps-list .step-item .step-content p {
+  font-size: 0.95rem;
+  color: var(--default-color);
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Services Section
+--------------------------------------------------------------*/
+.services {
+  padding: 80px 0;
+}
+
+.services .service-card {
+  background-color: var(--surface-color);
+  border-radius: 10px;
+  padding: 30px;
+  height: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.services .service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.services .service-card:hover .icon-box {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.services .service-card .icon-box {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.services .service-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--heading-color);
+}
+
+.services .service-card p {
+  margin-bottom: 20px;
+  color: var(--default-color);
+}
+
+.services .service-card .service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.services .service-card .service-features li {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  color: var(--default-color);
+}
+
+.services .service-card .service-features li i {
+  color: var(--accent-color);
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+.services .service-card .read-more {
+  color: var(--accent-color);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.services .service-card .read-more i {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.services .service-card .read-more:hover {
+  color: color-mix(in srgb, var(--accent-color), #000 10%);
+}
+
+.services .service-card .read-more:hover i {
+  transform: translateX(5px);
+}
+
+.services .btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.services .btn-primary:hover {
+  background-color: color-mix(in srgb, var(--accent-color), #000 10%);
+  border-color: color-mix(in srgb, var(--accent-color), #000 10%);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/*--------------------------------------------------------------
+# Consultation Section
+--------------------------------------------------------------*/
+.consultation {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.consultation .cta-wrapper {
+  background-color: var(--surface-color);
+  border-radius: 15px;
+  padding: 60px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.consultation .cta-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, var(--accent-color), color-mix(in srgb, var(--accent-color), #fff 30%));
+}
+
+@media (max-width: 992px) {
+  .consultation .cta-wrapper {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .consultation .cta-wrapper {
+    padding: 30px 20px;
+  }
+}
+
+.consultation .cta-content {
+  padding-right: 30px;
+}
+
+@media (max-width: 992px) {
+  .consultation .cta-content {
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+}
+
+.consultation .cta-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--heading-color);
+}
+
+@media (max-width: 768px) {
+  .consultation .cta-content h2 {
+    font-size: 2rem;
+  }
+}
+
+.consultation .cta-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: var(--default-color);
+}
+
+.consultation .cta-content .cta-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.consultation .cta-content .cta-stats .stat-item .number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  display: block;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .consultation .cta-content .cta-stats .stat-item .number {
+    font-size: 2rem;
+  }
+}
+
+.consultation .cta-content .cta-stats .stat-item .text {
+  font-size: 0.9rem;
+  color: var(--default-color);
+}
+
+.consultation .cta-form {
+  background-color: color-mix(in srgb, var(--surface-color), #000 3%);
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.consultation .cta-form h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--heading-color);
+}
+
+@media (max-width: 768px) {
+  .consultation .cta-form h3 {
+    font-size: 1.5rem;
+  }
+}
+
+.consultation .cta-form p {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  color: var(--default-color);
+}
+
+.consultation .cta-form .form-control {
+  height: 50px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+  background-color: var(--surface-color);
+  color: var(--default-color);
+  font-size: 14px;
+}
+
+.consultation .cta-form .form-control:focus {
+  border-color: var(--accent-color);
+  box-shadow: none;
+}
+
+.consultation .cta-form .form-control::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.consultation .cta-form select.form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 15px;
+}
+
+.consultation .cta-form button[type=submit] {
+  background-color: var(--accent-color);
+  border: none;
+  color: var(--contrast-color);
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.consultation .cta-form button[type=submit]:hover {
+  background-color: color-mix(in srgb, var(--accent-color), #000 10%);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/*--------------------------------------------------------------
+# Why Choose Us Section
+--------------------------------------------------------------*/
+.why-choose-us {
+  padding: 80px 0;
+  background-color: var(--background-color);
+}
+
+.why-choose-us .features-content {
+  padding-right: 30px;
+}
+
+@media (max-width: 992px) {
+  .why-choose-us .features-content {
+    padding-right: 0;
+    margin-bottom: 50px;
+  }
+}
+
+.why-choose-us .features-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--heading-color);
+}
+
+@media (max-width: 768px) {
+  .why-choose-us .features-content h2 {
+    font-size: 2rem;
+  }
+}
+
+.why-choose-us .features-content .lead {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: var(--default-color);
+}
+
+.why-choose-us .features-content p {
+  margin-bottom: 2rem;
+  color: var(--default-color);
+}
+
+.why-choose-us .features-content .features-list .feature-item {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.why-choose-us .features-content .features-list .feature-item:last-child {
+  margin-bottom: 0;
+}
+
+.why-choose-us .features-content .features-list .feature-item .feature-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-right: 20px;
+  transition: all 0.3s ease;
+}
+
+.why-choose-us .features-content .features-list .feature-item .feature-icon:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: translateY(-5px);
+}
+
+.why-choose-us .features-content .features-list .feature-item .feature-text h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--heading-color);
+}
+
+.why-choose-us .features-content .features-list .feature-item .feature-text p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+  color: var(--default-color);
+}
+
+.why-choose-us .features-image {
+  position: relative;
+}
+
+.why-choose-us .features-image .main-image {
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.why-choose-us .features-image .stats-card {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  background-color: var(--surface-color);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  z-index: 2;
+  width: 220px;
+}
+
+@media (max-width: 768px) {
+  .why-choose-us .features-image .stats-card {
+    width: 180px;
+    padding: 15px;
+    top: -20px;
+    left: -10px;
+  }
+}
+
+.why-choose-us .features-image .stats-card .stat-item {
+  text-align: center;
+}
+
+.why-choose-us .features-image .stats-card .stat-item h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+  .why-choose-us .features-image .stats-card .stat-item h3 {
+    font-size: 1.2rem;
+  }
+}
+
+.why-choose-us .features-image .stats-card .stat-item p {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+  color: var(--default-color);
+}
+
+@media (max-width: 768px) {
+  .why-choose-us .features-image .stats-card .stat-item p {
+    font-size: 0.7rem;
+  }
+}
+
+.why-choose-us .features-image .experience-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .why-choose-us .features-image .experience-badge {
+    padding: 15px;
+    right: 0;
+  }
+}
+
+.why-choose-us .features-image .experience-badge .badge-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-choose-us .features-image .experience-badge .badge-content .number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .why-choose-us .features-image .experience-badge .badge-content .number {
+    font-size: 2rem;
+  }
+}
+
+.why-choose-us .features-image .experience-badge .badge-content .text {
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/*--------------------------------------------------------------
+# Team Section
+--------------------------------------------------------------*/
+.team .swiper-wrapper {
+  height: auto !important;
+}
+
+.team .team-slider {
+  position: relative;
+  padding: 20px 0 60px;
+}
+
+.team .team-slider .swiper-pagination {
+  bottom: 0;
+}
+
+.team .team-slider .swiper-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 70%);
+  opacity: 1;
+  margin: 0 5px;
+  transition: 0.3s;
+}
+
+.team .team-slider .swiper-pagination .swiper-pagination-bullet-active {
+  width: 30px;
+  border-radius: 5px;
+  background-color: var(--accent-color);
+}
+
+.team .team-slider .swiper-button-prev,
+.team .team-slider .swiper-button-next {
+  width: 40px;
+  height: 40px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  border-radius: 50%;
+  color: var(--contrast-color);
+  transition: 0.3s;
+}
+
+.team .team-slider .swiper-button-prev:after,
+.team .team-slider .swiper-button-next:after {
+  font-size: 16px;
+}
+
+.team .team-slider .swiper-button-prev:hover,
+.team .team-slider .swiper-button-next:hover {
+  background-color: var(--accent-color);
+}
+
+.team .team-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  background-color: var(--surface-color);
+  height: 100%;
+}
+
+.team .team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.team .team-card:hover .team-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.team .team-card:hover .team-image img {
+  transform: scale(1.08);
+}
+
+.team .team-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.team .team-image img {
+  transition: transform 0.6s ease;
+}
+
+.team .team-image .team-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.team .team-image .social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.team .team-image .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  color: var(--contrast-color);
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.team .team-image .social-links a:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  transform: translateY(-5px);
+}
+
+.team .team-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.team .team-content h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.team .team-content span {
+  display: block;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  margin-bottom: 15px;
+}
+
+.team .team-content p {
+  font-size: 14px;
+  margin-bottom: 0;
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+}
+
+@media (max-width: 991px) {
+  .team .team-card {
+    margin-bottom: 20px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Testimonials Section
+--------------------------------------------------------------*/
+.testimonials .testimonial-item {
+  background-color: var(--surface-color);
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonials .testimonial-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.testimonials .testimonial-item .stars {
+  margin-bottom: 15px;
+  color: #FFD700;
+}
+
+.testimonials .testimonial-item .stars i {
+  margin-right: 2px;
+}
+
+.testimonials .testimonial-item p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: var(--default-color);
+}
+
+.testimonials .testimonial-item .testimonial-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.testimonials .testimonial-item .testimonial-footer .testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.testimonials .testimonial-item .testimonial-footer .testimonial-author img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+  border: 3px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+}
+
+.testimonials .testimonial-item .testimonial-footer .testimonial-author div h5 {
+  margin: 0 0 5px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.testimonials .testimonial-item .testimonial-footer .testimonial-author div span {
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.testimonials .testimonial-item .testimonial-footer .quote-icon {
+  font-size: 36px;
+  color: color-mix(in srgb, var(--accent-color), transparent 70%);
+  line-height: 1;
+}
+
+.testimonials .testimonial-item .testimonial-footer .quote-icon i {
+  transform: scaleX(-1);
+}
+
+@media (max-width: 768px) {
+  .testimonials .testimonial-item {
+    padding: 25px 20px;
+  }
+
+  .testimonials .testimonial-item p {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .testimonials .testimonial-item .testimonial-footer .testimonial-author img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .testimonials .testimonial-item .testimonial-footer .testimonial-author div h5 {
+    font-size: 16px;
+  }
+
+  .testimonials .testimonial-item .testimonial-footer .testimonial-author div span {
+    font-size: 13px;
+  }
+
+  .testimonials .testimonial-item .testimonial-footer .quote-icon {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .testimonials .testimonial-item {
+    padding: 20px 15px;
+  }
+
+  .testimonials .testimonial-item .testimonial-footer .testimonial-author img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Pricing Section
+--------------------------------------------------------------*/
+.pricing {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.pricing .pricing-toggle {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.pricing .pricing-toggle span {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0 15px;
+  color: var(--default-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pricing .pricing-toggle span.active {
+  color: var(--accent-color);
+}
+
+.pricing .pricing-toggle .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.pricing .pricing-toggle .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.pricing .pricing-toggle .switch input:checked+.slider {
+  background-color: var(--accent-color);
+}
+
+.pricing .pricing-toggle .switch input:checked+.slider:before {
+  transform: translateX(30px);
+}
+
+.pricing .pricing-toggle .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 70%);
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.pricing .pricing-toggle .switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.pricing .pricing-toggle .discount-badge {
+  position: absolute;
+  top: -25px;
+  right: -15px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+@media (max-width: 576px) {
+  .pricing .pricing-toggle .discount-badge {
+    top: -30px;
+    right: 0;
+  }
+}
+
+.pricing .pricing-item {
+  background-color: var(--surface-color);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing .pricing-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pricing .pricing-item.featured {
+  border: 2px solid var(--accent-color);
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+@media (max-width: 992px) {
+  .pricing .pricing-item.featured {
+    transform: scale(1);
+  }
+}
+
+.pricing .pricing-item.featured:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+@media (max-width: 992px) {
+  .pricing .pricing-item.featured:hover {
+    transform: translateY(-10px) scale(1);
+  }
+}
+
+.pricing .pricing-item.featured .pricing-badge {
+  position: absolute;
+  top: 16px;
+  right: -35px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 5px 40px;
+  transform: rotate(45deg);
+}
+
+.pricing .pricing-item .pricing-header {
+  padding: 30px;
+  text-align: center;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.pricing .pricing-item .pricing-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--heading-color);
+}
+
+.pricing .pricing-item .pricing-header .price-monthly,
+.pricing .pricing-item .pricing-header .price-yearly {
+  font-size: 2.5rem;
+  font-weight: 700;
   color: var(--accent-color);
   margin-bottom: 10px;
 }
 
-.about .icon-box h4 {
-  font-size: 20px;
-  font-weight: 700;
-  margin: 0 0 10px 0;
+.pricing .pricing-item .pricing-header .price-monthly span,
+.pricing .pricing-item .pricing-header .price-yearly span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--default-color);
 }
 
-.about .icon-box h4 a {
-  color: var(--heading-color);
-  transition: 0.3s;
-}
-
-.about .icon-box p {
-  font-size: 15px;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+.pricing .pricing-item .pricing-header p {
+  font-size: 0.9rem;
+  color: var(--default-color);
   margin-bottom: 0;
 }
 
-.about .icon-box:hover h4 a {
+.pricing .pricing-item .pricing-header .price-yearly {
+  display: none;
+}
+
+.pricing .pricing-item.yearly-active .price-monthly {
+  display: none;
+}
+
+.pricing .pricing-item.yearly-active .price-yearly {
+  display: block;
+}
+
+.pricing .pricing-item .pricing-features {
+  padding: 30px;
+  flex-grow: 1;
+}
+
+.pricing .pricing-item .pricing-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pricing .pricing-item .pricing-features ul li {
+  padding: 10px 0;
+  font-size: 0.95rem;
+  color: var(--default-color);
+  display: flex;
+  align-items: center;
+}
+
+.pricing .pricing-item .pricing-features ul li i {
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+.pricing .pricing-item .pricing-features ul li i.bi-check-circle {
+  color: #28a745;
+}
+
+.pricing .pricing-item .pricing-features ul li i.bi-x-circle {
+  color: #dc3545;
+}
+
+.pricing .pricing-item .pricing-footer {
+  padding: 20px 30px 30px;
+  text-align: center;
+}
+
+.pricing .pricing-item .pricing-footer .btn {
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.pricing .pricing-item .pricing-footer .btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.pricing .pricing-item .pricing-footer .btn-primary:hover {
+  background-color: color-mix(in srgb, var(--accent-color), #000 10%);
+  border-color: color-mix(in srgb, var(--accent-color), #000 10%);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pricing .pricing-item .pricing-footer .btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
   color: var(--accent-color);
+}
+
+.pricing .pricing-item .pricing-footer .btn-outline:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pricing .pricing-note p {
+  font-size: 1rem;
+  color: var(--default-color);
+}
+
+.pricing .pricing-note p a {
+  color: var(--accent-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pricing .pricing-note p a:hover {
+  text-decoration: underline;
+}
+
+.pricing body.pricing-yearly .pricing-toggle .monthly {
+  color: var(--default-color);
+}
+
+.pricing body.pricing-yearly .pricing-toggle .yearly {
+  color: var(--accent-color);
+}
+
+.pricing body.pricing-yearly .pricing-item .price-monthly {
+  display: none;
+}
+
+.pricing body.pricing-yearly .pricing-item .price-yearly {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+# Faq Section
+--------------------------------------------------------------*/
+.faq .faq-card {
+  height: 100%;
+  padding: 40px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 96%);
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  text-align: center;
+}
+
+.faq .faq-card i {
+  font-size: 48px;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.faq .faq-card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.faq .faq-card p {
+  margin-bottom: 25px;
+  font-size: 15px;
+  line-height: 24px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.faq .faq-card .btn-primary {
+  padding: 8px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.faq .faq-card .btn-primary:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  border-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.faq .faq-list {
+  padding: 0;
+}
+
+.faq .faq-list .faq-item {
+  position: relative;
+  margin-bottom: 25px;
+  padding: 30px;
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  cursor: pointer;
+}
+
+.faq .faq-list .faq-item:last-child {
+  margin-bottom: 0;
+}
+
+.faq .faq-list .faq-item h3 {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 600;
+  padding-right: 40px;
+  margin-bottom: 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.faq .faq-list .faq-item .faq-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.faq .faq-list .faq-item .faq-content p {
+  margin-bottom: 0;
+  font-size: 15px;
+  line-height: 24px;
+  overflow: hidden;
+}
+
+.faq .faq-list .faq-item .faq-toggle {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  font-size: 24px;
+  color: var(--accent-color);
+  transition: transform 0.2s ease;
+}
+
+.faq .faq-list .faq-item.faq-active h3 {
+  color: var(--accent-color);
+}
+
+.faq .faq-list .faq-item.faq-active .faq-content {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  opacity: 1;
+  padding-top: 15px;
+}
+
+.faq .faq-list .faq-item.faq-active .faq-toggle {
+  transform: rotate(45deg);
+}
+
+@media (max-width: 768px) {
+  .faq .faq-list .faq-item {
+    padding: 20px;
+  }
+
+  .faq .faq-list .faq-item h3 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .faq .faq-list .faq-item .faq-toggle {
+    right: 20px;
+    top: 20px;
+    font-size: 20px;
+  }
 }
 
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
-.contact .info-item+.info-item {
-  margin-top: 40px;
+.contact {
+  padding: 80px 0;
+  overflow: hidden;
 }
 
-.contact .info-item i {
-  color: var(--accent-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 92%);
-  font-size: 20px;
-  width: 44px;
-  height: 44px;
+.contact .contact-info {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50px;
-  transition: all 0.3s ease-in-out;
-  margin-right: 15px;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 30px;
 }
 
-.contact .info-item h3 {
-  padding: 0;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 5px;
+@media (max-width: 992px) {
+  .contact .contact-info {
+    margin-bottom: 40px;
+  }
 }
 
-.contact .info-item p {
-  padding: 0;
-  margin-bottom: 0;
-  font-size: 14px;
+.contact .contact-card {
+  background-color: var(--surface-color);
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
 }
 
-.contact .info-item:hover i {
-  background: var(--accent-color);
-  color: var(--contrast-color);
+.contact .contact-card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--accent-color);
 }
 
-.contact .php-email-form {
-  height: 100%;
+.contact .contact-card h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 15px;
 }
 
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
-.contact .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
+.contact .contact-card h3:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--accent-color);
+}
+
+.contact .contact-card p {
   color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 25px;
 }
 
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
-.contact .php-email-form textarea:focus {
+.contact .contact-card .contact-details {
+  margin-bottom: 25px;
+}
+
+.contact .contact-card .contact-details .contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.contact .contact-card .contact-details .contact-item i {
+  color: var(--accent-color);
+  font-size: 18px;
+  margin-right: 15px;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.contact .contact-card .contact-details .contact-item div h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin: 0 0 5px;
+}
+
+.contact .contact-card .contact-details .contact-item div p {
+  font-size: 14px;
+  color: var(--default-color);
+  margin: 0 0 5px;
+  line-height: 1.5;
+}
+
+.contact .contact-card .contact-details .contact-item div p:last-child {
+  margin-bottom: 0;
+}
+
+.contact .contact-card .contact-details .contact-item:last-child {
+  margin-bottom: 0;
+}
+
+.contact .contact-card .social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.contact .contact-card .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.contact .contact-card .social-links a:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: translateY(-3px);
+}
+
+.contact .contact-form-wrapper {
+  background-color: var(--surface-color);
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  padding: 35px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact .contact-form-wrapper:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--accent-color);
+}
+
+.contact .contact-form-wrapper .php-email-form .form-group {
+  margin-bottom: 15px;
+}
+
+.contact .contact-form-wrapper .php-email-form .form-group label {
+  font-weight: 500;
+  color: var(--heading-color);
+  margin-bottom: 8px;
+  font-size: 14px;
+  display: block;
+}
+
+.contact .contact-form-wrapper .php-email-form .form-group .form-control {
+  height: auto;
+  border-radius: 8px;
+  padding: 12px 20px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+  color: var(--default-color);
+  background-color: var(--surface-color);
+  font-size: 14px;
+}
+
+.contact .contact-form-wrapper .php-email-form .form-group .form-control:focus {
   border-color: var(--accent-color);
+  outline: none;
+  box-shadow: none;
 }
 
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
-.contact .php-email-form textarea::placeholder {
+.contact .contact-form-wrapper .php-email-form .form-group .form-control::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .contact-form-wrapper .php-email-form .form-group textarea.form-control {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact .contact-form-wrapper .php-email-form .form-check {
+  margin-bottom: 20px;
+}
+
+.contact .contact-form-wrapper .php-email-form .form-check .form-check-input {
+  margin-top: 0.3em;
+}
+
+.contact .contact-form-wrapper .php-email-form .form-check .form-check-input:checked {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.contact .contact-form-wrapper .php-email-form .form-check .form-check-input:focus {
+  box-shadow: none;
+  border-color: color-mix(in srgb, var(--accent-color), transparent 50%);
+}
+
+.contact .contact-form-wrapper .php-email-form .form-check .form-check-label {
   color: var(--default-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
+  font-size: 14px;
+  padding-left: 5px;
+}
+
+.contact .contact-form-wrapper .php-email-form button {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border: none;
+  padding: 12px 30px;
   border-radius: 50px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 25%);
+.contact .contact-form-wrapper .php-email-form button:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  transform: translateY(-3px);
 }
 
-/* ==============================================================
-   Faro Theme Overrides
-   Palette: Gold #dfa566 | Slate #4d5d6a | Gray #d8d8d8 | White #ffffff
-   Place at end of main.css so it wins specificity via cascade.
-   ============================================================== */
+@media (max-width: 992px) {
 
-/* Brand variables */
-:root {
-  /* Global */
-  --accent-color: #dfa566;            /* buttons, links, underlines */
-  --background-color: #ffffff;        /* keep sections on white */
-  --default-color: #ffffff;           /* primary text over hero (dark overlay) */
-  --heading-color: #ffffff;           /* headings over hero (dark overlay) */
-  --surface-color: #ffffff;
-  --contrast-color: #ffffff;
-
-  /* Nav */
-  --nav-color: #ffffff;
-  --nav-hover-color: #dfa566;
-  --nav-mobile-background-color: #4d5d6a;   /* slate */
-  --nav-dropdown-background-color: #4d5d6a; /* unify to slate */
-  --nav-dropdown-color: #ffffff;
-  --nav-dropdown-hover-color: #dfa566;
+  .contact .contact-card,
+  .contact .newsletter-card,
+  .contact .contact-form-wrapper {
+    padding: 25px;
+  }
 }
 
-/* Dark slate overlay over the hero background image */
-body::before {
-  /* rgba(77,93,106,0.72) based on #4d5d6a */
-  background: rgba(77, 93, 106, 0.72);
+@media (max-width: 768px) {
+  .contact {
+    padding: 60px 0;
+  }
+
+  .contact .contact-card h3 {
+    font-size: 20px;
+  }
+
+  .contact .newsletter-card h3 {
+    font-size: 18px;
+  }
 }
 
-/* Section title underline (already uses --accent-color, but ensure crispness) */
-.section-title h2:after {
-  background: var(--accent-color);
+/*--------------------------------------------------------------
+# Service Details Section
+--------------------------------------------------------------*/
+.service-details .services-list {
+  background-color: var(--surface-color);
+  padding: 10px 30px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  margin-bottom: 20px;
 }
 
-/* Buttons used in CTAs (Bootstrap helpers + template classes) */
-.btn-primary,
-.hero .hero-newsletter .newsletter-form input[type=submit] {
-  background-color: #dfa566;
-  border-color: #dfa566;
-  color: #111;
-}
-.btn-primary:hover,
-.hero .hero-newsletter .newsletter-form input[type=submit]:hover {
-  background-color: color-mix(in srgb, #dfa566, black 8%);
-  border-color: color-mix(in srgb, #dfa566, black 8%);
-  color: #111;
+.service-details .services-list a {
+  display: block;
+  line-height: 1;
+  padding: 8px 0 8px 15px;
+  border-left: 3px solid color-mix(in srgb, var(--default-color), transparent 70%);
+  margin: 20px 0;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  transition: 0.3s;
 }
 
-.btn-outline-secondary {
-  border-color: #4d5d6a;
-  color: #4d5d6a;
-  background: transparent;
-}
-.btn-outline-secondary:hover {
-  background: #4d5d6a;
-  border-color: #4d5d6a;
-  color: #ffffff;
-}
-
-/* Footer + social accents kept consistent */
-.footer .icon,
-.footer .social-links a:hover,
-.hero .social-links a:hover {
-  color: #dfa566;
-  border-color: #dfa566;
-}
-
-/* Countdown boxes: give a touch more definition on light displays */
-.hero .countdown div {
-  border-color: color-mix(in srgb, #4d5d6a, white 85%);
-}
-
-/* ==============================================================
-   Faro Theme — Iteration 2 Tweaks
-   ============================================================== */
-
-/* Secondary buttons (Linktree, Email) */
-.btn-outline-secondary {
-  border-color: #dfa566;
-  color: #dfa566;
-  background: rgba(77, 93, 106, 0.08); /* faint slate background so it’s visible */
-}
-.btn-outline-secondary:hover {
-  background: #dfa566;
-  border-color: #dfa566;
-  color: #ffffff;
-}
-
-/* Location highlight in gold */
-#contact .info-item h3 + p,
-.footer .address p {
-  color: #dfa566;
-  font-weight: 600;
-}
-
-.text-accent {
-  color: #dfa566;
-}
-
-/* ==============================================================
-   Faro Theme — Sticky Header on Scroll
-   ============================================================== */
-.header.header-scrolled {
-  /* light “glass” background */
-  --background-color: rgba(255, 255, 255, 0.86);
-  background-color: var(--background-color);
-  backdrop-filter: saturate(140%) blur(6px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-}
-
-/* switch nav/link colors for readability on light bg */
-.header.header-scrolled {
-  --nav-color: #4d5d6a;           /* slate links */
-  --nav-hover-color: #dfa566;     /* gold hover */
-  --heading-color: #0f1418;       /* site name color */
-}
-
-.header.header-scrolled .logo h1 {
+.service-details .services-list a.active {
   color: var(--heading-color);
+  font-weight: 700;
+  border-color: var(--accent-color);
 }
 
-/* mobile toggle stays readable */
-@media (max-width: 1199px) {
-  .header.header-scrolled .mobile-nav-toggle {
-    color: #4d5d6a;
-  }
+.service-details .services-list a:hover {
+  border-color: var(--accent-color);
 }
 
-/* ==============================================================
-   Faro Theme — Brand name color
-   ============================================================== */
-.header .logo h1 {
-  color: #4d5d6a; /* Faro Slate */
+.service-details .services-img {
+  margin-bottom: 20px;
 }
 
-/* Keep it slate even after the header gains a background on scroll */
-.header.header-scrolled .logo h1 {
-  color: #4d5d6a;
+.service-details h3 {
+  font-size: 26px;
+  font-weight: 700;
 }
 
-/* ==============================================================
-   Faro Theme — Brand name color by header state
-   ============================================================== */
-
-/* Default (top of page, transparent header): white text over dark overlay */
-.header .logo h1 {
-  color: #ffffff;
+.service-details h4 {
+  font-size: 20px;
+  font-weight: 700;
 }
 
-/* After scroll (header gets light bg): switch to Faro Slate */
-.header.header-scrolled .logo h1 {
-  color: #4d5d6a; /* Faro Slate */
+.service-details p {
+  font-size: 15px;
 }
 
-/* Make the section subtitle a touch bigger */
-.lead-subtitle { font-size: 1.15rem; font-weight: 600; }
-@media (min-width: 992px) { .lead-subtitle { font-size: 1.25rem; } }
+.service-details ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
 
-/* ==============================================================
-   Ledger & Flow — Gold-First Iteration (drop at end of main.css)
-   Goals:
-   • All accents (buttons, links, icons, hovers) = GOLD
-   • Green only as background hue/overlay
-   • Minimal + safe overrides; no layout changes
-   ============================================================== */
+.service-details ul li {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+}
 
-/* Brand tokens */
+.service-details ul i {
+  font-size: 20px;
+  margin-right: 8px;
+  color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Starter Section Section
+--------------------------------------------------------------*/
+.starter-section {
+  /* Add your styles here */
+}
+/* ============================================================
+   Ledger & Flow — Bootstrap button color overrides (green)
+   ============================================================ */
+
+/* Optional: make Bootstrap’s “primary” color align with brand */
 :root {
-  --brand-gold:  #ce9138;  /* L&F Gold */
-  --brand-green: #0b4627;  /* Background hue only */
-
-  /* map global accent to GOLD */
-  --accent-color: var(--brand-gold);
-
-  /* nav colors */
-  --nav-hover-color: var(--brand-gold);
-  --nav-mobile-background-color: #2f3e46;      /* deep slate backdrop */
-  --nav-dropdown-background-color: #2f3e46;
-  --nav-dropdown-hover-color: var(--brand-gold);
+  --bs-primary: var(--accent-color);
+  --bs-primary-rgb: 1, 136, 128; /* #018880 */
 }
 
-/* =============== Background hue (put green into the atmosphere) =============== */
-/* Use a green-tinted overlay for the hero/backdrop so gold pops on top */
-body::before {
-  /* fallback rgba + modern color-mix for wider support */
-  background: rgba(11, 110, 79, 0.60); /* #0b6e4f @60% */
-  background: color-mix(in srgb, var(--brand-green), transparent 40%);
+/* Solid primary buttons (was blue) */
+.btn-primary {
+  --bs-btn-color: var(--contrast-color);
+  --bs-btn-bg: var(--accent-color);
+  --bs-btn-border-color: var(--accent-color);
+
+  --bs-btn-hover-color: var(--contrast-color);
+  --bs-btn-hover-bg: color-mix(in srgb, var(--accent-color), #000 10%);
+  --bs-btn-hover-border-color: color-mix(in srgb, var(--accent-color), #000 10%);
+
+  --bs-btn-focus-shadow-rgb: 1, 136, 128;
+
+  --bs-btn-active-color: var(--contrast-color);
+  --bs-btn-active-bg: color-mix(in srgb, var(--accent-color), #000 14%);
+  --bs-btn-active-border-color: color-mix(in srgb, var(--accent-color), #000 14%);
+
+  --bs-btn-disabled-color: var(--contrast-color);
+  --bs-btn-disabled-bg: color-mix(in srgb, var(--accent-color), transparent 35%);
+  --bs-btn-disabled-border-color: color-mix(in srgb, var(--accent-color), transparent 35%);
 }
 
-/* =============== Links & text accents =============== */
-a { color: var(--brand-gold); }
-a:hover { color: color-mix(in srgb, var(--brand-gold), black 14%); }
-.text-accent { color: var(--brand-gold); }
+/* Outline primary buttons (was blue outline) */
+.btn-outline-primary {
+  --bs-btn-color: var(--accent-color);
+  --bs-btn-border-color: var(--accent-color);
 
-/* Section title underline */
-.section-title h2:after { background: var(--brand-gold); }
+  --bs-btn-hover-color: var(--contrast-color);
+  --bs-btn-hover-bg: var(--accent-color);
+  --bs-btn-hover-border-color: var(--accent-color);
 
-/* =============== Header (transparent → sticky) =============== */
-/* Keep site name white over dark hero; switch to slate on scroll */
-.header .logo h1 { color: #ffffff; }
-.header.header-scrolled {
-  --background-color: rgba(255,255,255,0.92);
-  background-color: var(--background-color);
-  backdrop-filter: saturate(140%) blur(8px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  --bs-btn-focus-shadow-rgb: 1, 136, 128;
 
-  --nav-color: #2f3e46;                 /* readable on light header */
-  --nav-hover-color: var(--brand-gold); /* GOLD highlight */
-  --heading-color: #1b1f23;
-}
-.header.header-scrolled .logo h1 { color: #2f3e46; }
+  --bs-btn-active-color: var(--contrast-color);
+  --bs-btn-active-bg: var(--accent-color);
+  --bs-btn-active-border-color: var(--accent-color);
 
-/* =============== Buttons (primary = gold fill, secondary = gold outline) =============== */
-.btn,
-button,
-input[type="submit"] { border-radius: 12px; }
-
-.btn-primary,
-.hero .hero-newsletter .newsletter-form input[type=submit] {
-  background-color: var(--brand-gold);
-  border-color: var(--brand-gold);
-  color: #1b1f23; /* darker text for contrast on gold */
-}
-.btn-primary:hover,
-.hero .hero-newsletter .newsletter-form input[type=submit]:hover {
-  background-color: color-mix(in srgb, var(--brand-gold), black 12%);
-  border-color: color-mix(in srgb, var(--brand-gold), black 12%);
-  color: #101417;
-}
-
-.btn-outline-secondary {
-  border-color: var(--brand-gold);
-  color: var(--brand-gold);
-  background: rgba(223, 165, 102, 0.08);
-}
-.btn-outline-secondary:hover {
-  background: var(--brand-gold);
-  border-color: var(--brand-gold);
-  color: #1b1f23;
-}
-
-/* Keyboard focus ring (accessible, gold-tinted) */
-a:focus,
-button:focus,
-.btn:focus,
-input[type="submit"]:focus {
-  outline: 3px solid color-mix(in srgb, var(--brand-gold), white 35%);
-  outline-offset: 2px;
-}
-
-/* =============== Icons & Socials =============== */
-/* About + footer icons should read as gold accents */
-.about .icon-box i,
-.footer .icon { color: var(--brand-gold); }
-
-/* Social buttons hover to gold */
-.hero .social-links a,
-.footer .social-links a {
-  border-color: color-mix(in srgb, #ffffff, transparent 55%);
-  color: color-mix(in srgb, #ffffff, transparent 25%);
-}
-.hero .social-links a:hover,
-.footer .social-links a:hover {
-  color: var(--brand-gold);
-  border-color: var(--brand-gold);
-}
-
-/* =============== Countdown cosmetics =============== */
-.hero .countdown div {
-  border-color: color-mix(in srgb, #ffffff, black 12%);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-}
-
-/* =============== Footer details =============== */
-.footer .address p {
-  color: var(--brand-gold);
-  font-weight: 600;
-}
-.footer .copyright {
-  border-top: 1px solid color-mix(in srgb, #ffffff, transparent 88%);
-}
-
-/* =============== Scroll-to-top =============== */
-.scroll-top {
-  background-color: var(--brand-gold);
-}
-.scroll-top:hover {
-  background-color: color-mix(in srgb, var(--brand-gold), black 12%);
-}
-
-/* =============== Mobile nav icon chip hover (gold) =============== */
-@media (max-width: 1199px) {
-  .navmenu a i,
-  .navmenu a:focus i {
-    background-color: color-mix(in srgb, var(--brand-gold), transparent 88%);
-  }
-  .navmenu a i:hover,
-  .navmenu a:focus i:hover {
-    background-color: var(--brand-gold);
-    color: var(--contrast-color);
-  }
+  --bs-btn-disabled-color: color-mix(in srgb, var(--accent-color), transparent 35%);
+  --bs-btn-disabled-border-color: color-mix(in srgb, var(--accent-color), transparent 35%);
 }
