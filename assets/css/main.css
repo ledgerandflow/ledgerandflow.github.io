@@ -2,7 +2,7 @@
   File: main.css
   Project: Ledger & Flow
   Created: 12.10.2025
-  Updated: 12.21.2025
+  Updated: 04.01.2026
   Author: Faro Digital Studio
 --------------------------------------------------------------*/
 
@@ -20,9 +20,9 @@
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #444d4d; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #003a36; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #018880; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --default-color: #0d4628; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #0d4628; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #c89041; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -33,24 +33,24 @@
   --nav-hover-color: #ffffff; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #444d4d; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #018880; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-color: #0d4628; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #0d4628; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #f1f8f7;
+  --background-color: #fffefe;
   --surface-color: #ffffff;
 }
 
 .dark-background {
-  --background-color: #005751;
+  --background-color: #0d4628;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   --accent-color: #ffffff;
   --surface-color: #252525;
-  --contrast-color: #018880;
+  --contrast-color: #0d4628;
 }
 
 /* Smooth scroll */
@@ -210,7 +210,7 @@ h6 {
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
-  --background-color: rgba(0, 87, 81, 0.9);
+  --background-color: #0d4628;
 }
 
 /*--------------------------------------------------------------
@@ -2707,4 +2707,136 @@ section,
 
   --bs-btn-disabled-color: color-mix(in srgb, var(--accent-color), transparent 35%);
   --bs-btn-disabled-border-color: color-mix(in srgb, var(--accent-color), transparent 35%);
+}
+
+/* Dark sections: keep hero button text aligned with brand green */
+.dark-background{
+  --contrast-color: #0d4628;
+}
+
+/* Header CTA: use brand gold to avoid green-on-green */
+.header .btn-getstarted,
+.header .btn-getstarted:focus{
+  background: var(--brand-gold);
+  color: #ffffff;
+}
+.header .btn-getstarted:hover,
+.header .btn-getstarted:focus:hover{
+  background: color-mix(in srgb, var(--brand-gold), #000 12%);
+  color: #ffffff;
+}
+
+/* Hero CTA alignment on mobile (centered + consistent width) */
+@media (max-width: 576px){
+  .hero .hero-content .hero-btns{
+    align-items: center;
+    width: 100%;
+  }
+  .hero .hero-content .hero-btns .btn{
+    width: 100%;
+    max-width: 460px;
+    text-align: center;
+  }
+}
+
+/* About icons: slightly larger, keep accent color */
+.about .about-content .feature-item .icon{
+  font-size: 3rem;
+  color: var(--accent-color);
+}
+
+/* Keep Bootstrap primary/outline in sync with brand green */
+:root{
+  --bs-primary: var(--accent-color);
+  --bs-primary-rgb: 13, 70, 40; /* #0d4628 */
+}
+.btn-primary{
+  --bs-btn-color: var(--contrast-color);
+  --bs-btn-bg: var(--accent-color);
+  --bs-btn-border-color: var(--accent-color);
+
+  --bs-btn-hover-color: var(--contrast-color);
+  --bs-btn-hover-bg: color-mix(in srgb, var(--accent-color), #000 10%);
+  --bs-btn-hover-border-color: color-mix(in srgb, var(--accent-color), #000 10%);
+
+  --bs-btn-focus-shadow-rgb: 13, 70, 40;
+
+  --bs-btn-active-color: var(--contrast-color);
+  --bs-btn-active-bg: color-mix(in srgb, var(--accent-color), #000 14%);
+  --bs-btn-active-border-color: color-mix(in srgb, var(--accent-color), #000 14%);
+}
+.btn-outline-primary{
+  --bs-btn-color: var(--accent-color);
+  --bs-btn-border-color: var(--accent-color);
+
+  --bs-btn-hover-color: var(--contrast-color);
+  --bs-btn-hover-bg: var(--accent-color);
+  --bs-btn-hover-border-color: var(--accent-color);
+
+  --bs-btn-focus-shadow-rgb: 13, 70, 40;
+}
+
+:root{
+  --brand-gold:  #c89041;      /* brand gold */
+  --nav-dropdown-hover-color: var(--accent-color);
+}
+
+/* ============================================================
+   Mobile polish: header title scaling + centered stacked CTAs
+   ============================================================ */
+
+/* Make the navbar brand text scale with viewport width */
+.header .logo h1{
+  font-size: clamp(20px, 4.6vw, 30px);
+}
+
+/* Keep logo + CTA from wrapping awkwardly */
+.header .logo,
+.header .btn-getstarted{
+  white-space: nowrap;
+}
+
+/* Slightly reduce header CTA footprint on small phones */
+@media (max-width: 576px){
+  .header .btn-getstarted{
+    padding: 6px 16px;
+    font-size: 13px;
+  }
+  .header .btn-getstarted{
+    margin-right: 8px; /* overrides the 15px mobile margin if present */
+  }
+}
+
+/* If hero buttons stack, ensure they are centered and uniform */
+@media (max-width: 576px){
+  .hero .hero-content .hero-btns{
+    align-items: center;
+    width: 100%;
+  }
+  .hero .hero-content .hero-btns .btn{
+    width: 100%;
+    max-width: 460px;
+    text-align: center;
+  }
+}
+
+/* Footer social links: brand green + fill/invert on hover */
+.footer .social-links a{
+  border: 1px solid var(--default-color);
+  color: var(--default-color);
+  background-color: transparent;
+  transition: all 0.25s ease;
+}
+
+.footer .social-links a:hover{
+  background-color: var(--default-color);
+  border-color: var(--default-color);
+  color: var(--contrast-color);
+  transform: translateY(-2px);
+}
+
+/* Optional: keyboard focus */
+.footer .social-links a:focus-visible{
+  outline: 3px solid color-mix(in srgb, var(--default-color), transparent 60%);
+  outline-offset: 3px;
 }
